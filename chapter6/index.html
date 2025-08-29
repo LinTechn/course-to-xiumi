@@ -66,7 +66,41 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">第六章：组件与布局</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">万物皆组件</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">布局与组件的概念</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">万物皆组件</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">布局规定列</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">布局也是组件</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">调整布局的结构与基本样式</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">增删结构</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">调整宽度</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_9">调整外观</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">对齐与分布</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_11">组件定位</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">更多设置</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_13">常用的基础布局</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_14">多图滑动</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_15">固定布局</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_16">自由布局</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -95,18 +129,79 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="_1">第六章：布局与组件</h1>
-<h2 id="_2">万物皆组件</h2>
+<h2 id="_2">布局与组件的概念</h2>
+<h3 id="_3">万物皆组件</h3>
 <p>一个图文中的所有内容都是组件——一段文字、一个图片、标题模板等等等等，它们自身可能又由很多个组件构成。</p>
 <p>进入布局模式，就可以清晰地看到各个组件及其构成。</p>
 <p>比如这里的聊天框就是由一个圆角矩形和一个小菱形构成的。</p>
 <p><img alt="" src="%E7%BB%84%E4%BB%B6.gif" /></p>
-<h1 id="_3">布局规定列</h1>
+<h3 id="_4">布局规定列</h3>
 <p>秀米的排版逻辑是这样的：一个组件就是“一行”，竖向排布，构成整个图文。这意味着不管组件内部是如何构成的，它到最外层一定是被一个大的矩形框所包围住的。</p>
 <p><img alt="" src="%E5%B8%83%E5%B1%801.gif" /></p>
 <p>这也意味着，做排版就是在一个组件的内部横向上做文章，规定横向格式的就是<strong>布局</strong>。</p>
 <p>布局是用于限制内容宽度的单列或多列容器；可以在每列中添加各种组件，但是内部的所有组件宽度都会受制于该容器，同时每列容器都可以设置单独的样式。</p>
-<p>也就是说，布局可以创造多列的结构，基于布局本身是可以拖拽的组件，可以在组件嵌套后产生更复杂结构。</p>
-<p>创造结构后，将组件拖拽放入，便可以产生各类版式。</p>
+<p>也就是说，布局可以创造多列的结构。</p>
+<h3 id="_5">布局也是组件</h3>
+<p>基于布局本身是可以拖拽的组件，可以在组件嵌套后产生更复杂结构。</p>
+<p>创造结构后，将组件拖拽放入，调整各列的宽度，便可以产生各类版式。</p>
+<p><img alt="" src="%E5%B8%83%E5%B1%802.gif" /></p>
+<h2 id="_6">调整布局的结构与基本样式</h2>
+<p>布局-基础布局中提供了许多基本的列布局模板。按默认排序，这里已经躺好了很多蓝色线框，此时鼠标悬停上去，可以看到提示“单列布局”、“二列布局”、“三列布局”……“多列布局”。显然，布局将单行分割为多列，每列放入不同内容，左右并列的图文效果就迎刃而解了。</p>
+<p>此时灰色线框外围出现红色虚线框，他们对应弹出的“布局”调整栏；整个行块外围出现了黑色实线框，对应弹出的“组件”调整栏。</p>
+<p>此前对文字和图片调整过程中，我们接触了他们相应的调整栏和参数，布局同样也有自己的调整项目。包含了<strong>增删结构、调整宽度、外观、对齐与分布</strong>等。当然，整行布局等同于有结构的组件，在制作模板时也常用“组件定位”。下面就针对着几个功能作详细的讲解。</p>
+<p><img alt="" src="%E5%B8%83%E5%B1%80%E8%AE%BE%E7%BD%AE.png" /></p>
+<h3 id="_7">增删结构</h3>
+<p>两种方式增加列。</p>
+<ul>
+<li>通过插入列增加新列。</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%803.gif" /></p>
+<ul>
+<li>通过直接拖动图片增加新列。</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%804.gif" /></p>
+<h3 id="_8">调整宽度</h3>
+<p>两种方式调整布局各部分的宽度。</p>
+<ul>
+<li>选中后通过按钮直接调整宽度。</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%805.gif" /></p>
+<ul>
+<li>在组件中输入宽度调整。</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%806.gif" /></p>
+<h3 id="_9">调整外观</h3>
+<p>可以设置布局的背景色/背景图、边距、边框、阴影，从而调整外观。</p>
+<ul>
+<li>设置背景色/背景图。</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%807.gif" /></p>
+<ul>
+<li>边距</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%808.gif" /></p>
+<ul>
+<li>边框</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%809.gif" /></p>
+<ul>
+<li>阴影</li>
+</ul>
+<p><img alt="" src="%E5%B8%83%E5%B1%8010.gif" /></p>
+<h3 id="_10">对齐与分布</h3>
+<p><img alt="" src="%E5%B8%83%E5%B1%8011.gif" /></p>
+<h3 id="_11">组件定位</h3>
+<p>组件定位中可以修改组件的组前距、组后距，对齐方式与偏移量、重叠次序等等。</p>
+<p>通过这些组前、后距，可以微调组件之间的距离以达到更美观的效果。</p>
+<p><img alt="" src="%E5%B8%83%E5%B1%8012.gif" /></p>
+<p>通过修改对齐方式，可以实现组件的排版效果。</p>
+<p><img alt="" src="%E5%B8%83%E5%B1%8013.gif" /></p>
+<h3 id="_12">更多设置</h3>
+<p><img alt="" src="%E6%9B%B4%E5%A4%9A%E8%AE%BE%E7%BD%AE.png" /></p>
+<h2 id="_13">常用的基础布局</h2>
+<h3 id="_14">多图滑动</h3>
+<h3 id="_15">固定布局</h3>
+<h3 id="_16">自由布局</h3>
               
             </div>
           </div><footer>
